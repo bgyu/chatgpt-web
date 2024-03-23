@@ -1,8 +1,12 @@
 <template>
   <div class="text-neutral-400">
-    <span>Star on</span>
-    <a href="https://github.com/Chanzhaoyu/chatgpt-bot" target="_blank" class="text-blue-500">
-      GitHub
-    </a>
+    <span>Model: {{ model }}</span>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { useModel } from './useModel';
+
+const { model } = useModel();
+</script>
+

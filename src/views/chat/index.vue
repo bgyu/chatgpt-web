@@ -408,6 +408,12 @@ function handleStop() {
   }
 }
 
+function handleTopQuestion(message: string)
+{
+  prompt.value = message
+  handleSubmit()
+}
+
 // 可优化部分
 // 搜索选项计算，这里使用value作为索引项，所以当出现重复value时渲染异常(多项同时出现选中效果)
 // 理想状态下其实应该是key作为索引项,但官方的renderOption会出现问题，所以就需要value反renderLabel实现
@@ -451,7 +457,7 @@ const footerClass = computed(() => {
   return classes
 })
 
-onMounted(() => {
+onMounted(() => {   
   scrollToBottom()
   if (inputRef.value && !isMobile.value)
     inputRef.value?.focus()
@@ -473,6 +479,9 @@ onUnmounted(() => {
     />
     <main class="flex-1 overflow-hidden">
       <div id="scrollRef" ref="scrollRef" class="h-full overflow-hidden overflow-y-auto">
+        
+        <div class="text-[#4f555e]">师兄吉祥，我是福泉太极宫的智能小道士，如有道家文化、太极养生、祈福旺运等问题，欢迎师兄咨询，我会耐心解答，系统暂不支持语音，敬请师兄使用文字输入，福生无量天尊！</div>
+  
         <div
           id="image-wrapper"
           class="w-full max-w-screen-xl m-auto dark:bg-[#101014]"
@@ -511,6 +520,12 @@ onUnmounted(() => {
       </div>
     </main>
     <footer :class="footerClass">
+      <div class="w-full max-w-screen-xl m-auto">
+        <div class="text-xl text-[#4f555e] dark:text-white flex items-begin gap-1 mt-2 flex-row-reverse">常见问题</div>
+        <div class="flex items-begin gap-1 mt-2 flex-row-reverse hljs-link hover:bg-neutral-100 dark:hover:bg-[#414755]" @click="handleTopQuestion('我怎样才能旺桃花?')">我怎样才能旺桃花?</div>
+        <div class="flex items-begin gap-1 mt-2 flex-row-reverse hljs-link hover:bg-neutral-100 dark:hover:bg-[#414755]" @click="handleTopQuestion('如何求财?')">如何求财?</div>
+        <div class="flex items-begin gap-1 mt-2 flex-row-reverse hljs-link hover:bg-neutral-100 dark:hover:bg-[#414755]" @click="handleTopQuestion('事业不顺怎么办?')">事业不顺怎么办?</div>
+      </div>
       <div class="w-full max-w-screen-xl m-auto">
         <div class="flex items-center justify-between space-x-2">
           <HoverButton v-if="!isMobile" @click="handleClear">

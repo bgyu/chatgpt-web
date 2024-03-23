@@ -29,8 +29,8 @@ export default {
     stopResponding: 'Stop Responding',
   },
   chat: {
-    newChatButton: 'New Chat',
-    newChatTitle: 'New Chat',
+    newChatButton: '新对话',
+    newChatTitle: '新对话',
     placeholder: 'Ask me anything...(Shift + Enter = line break, "/" to trigger prompts)',
     placeholderMobile: 'Ask me anything...',
     copy: 'Copy',
@@ -81,7 +81,7 @@ export default {
     stars: 'If you find this project helpful, please give me a Star on GitHub or give a little sponsorship, thank you!',
   },
   store: {
-    siderButton: 'Prompt Store',
+    siderButton: '提示词库',
     local: 'Local',
     online: 'Online',
     title: 'Title',
